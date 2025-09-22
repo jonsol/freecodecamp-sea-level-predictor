@@ -18,7 +18,7 @@ def draw_plot():
     df_2000 = df[df['Year'] >= 2000]
     slope2, intercept2, _, _, _ = linregress(df_2000['Year'], df_2000['CSIRO Adjusted Sea Level'])
     anos_2000 = range(2000, 2051)
-    rplt.plot(anos_2000, [intercept2 + slope2*x for x in anos_2000], 'g', label='Ajuste desde 2000')
+    plt.plot(anos_2000, [intercept2 + slope2*x for x in anos_2000], 'g', label='Ajuste desde 2000')
 
     # Add labels and title
     plt.xlabel('Year')
@@ -29,3 +29,7 @@ def draw_plot():
     # Save plot and return data for testing (DO NOT MODIFY)
     plt.savefig('sea_level_plot.png')
     return plt.gca()
+
+if __name__ == "__main__":
+    draw_plot()
+    plt.show()
