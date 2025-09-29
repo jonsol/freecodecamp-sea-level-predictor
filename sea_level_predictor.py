@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy import stats
 from scipy.stats import linregress
 
 def draw_plot():
@@ -33,7 +32,6 @@ def draw_plot():
     res = linregress(x, y)
 
     x_low = 2000
-    x_high = 2060
     x_extended = np.linspace(x_low, x_high, 100)
 
     plt.plot(x_extended, res.intercept + res.slope * x_extended, 'r', label='fitted line')
@@ -49,3 +47,6 @@ def draw_plot():
     # Save plot and return data for testing (DO NOT MODIFY)
     plt.savefig('sea_level_plot.png')
     return plt.gca()
+
+
+draw_plot()
