@@ -16,7 +16,7 @@ def draw_plot():
     plt.scatter(x, y, color='blue')
 
     # Create first line of best fit
-    res = stats.linregress(x, y)
+    res = linregress(x, y)
 
     x_low = 1880
     x_high = 2060
@@ -30,7 +30,7 @@ def draw_plot():
     x = df_line['Year']
     y = df_line['CSIRO Adjusted Sea Level']
 
-    res = stats.linregress(x, y)
+    res = linregress(x, y)
 
     x_low = 2000
     x_high = 2060
